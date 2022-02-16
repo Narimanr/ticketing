@@ -13,9 +13,6 @@ jobs:
       - name: Build the image
         run:  cd tickets && docker build . --file Dockerfile --tag narimanr/tickets
       - name: Login to docker
-        run:  docker login -u $DOCKER_USERNAME -p $DOCKER_PASS
-        env:
-          DOCKER_USERNAME:  ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASS:  ${{ secrets.DOCKER_PASS }}
+        run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASS }}
       - name: push to docker
         run:  docker push narimanr/tickets
