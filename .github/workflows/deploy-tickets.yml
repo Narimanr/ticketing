@@ -15,7 +15,7 @@ jobs:
       - name: Login to docker
         run:  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: narimanr
+          DOCKER_PASSWORD: LogHorizonDocker94
       - name: push to docker
         run:  docker push narimanr/tickets
