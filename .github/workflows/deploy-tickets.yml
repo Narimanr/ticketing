@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on:  ubuntu-latest
+    environment: default
     steps:
       - uses: actions/checkout@v2
       - name: Build the image
@@ -15,7 +16,7 @@ jobs:
       - name: Login to docker
         run:  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
-          DOCKER_USERNAME: narimanr
-          DOCKER_PASSWORD: LogHorizonDocker94
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: push to docker
         run:  docker push narimanr/tickets
