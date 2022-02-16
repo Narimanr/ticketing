@@ -13,7 +13,7 @@ const LandingPage = ({ currentUser, tickets }) => {
                 </td>
             </tr >
         );
-    })
+    });
     return (
         <div>
             <h1>Tickets</h1>
