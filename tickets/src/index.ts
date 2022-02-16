@@ -6,7 +6,7 @@ import { OrderCancelledEvent } from '@nrtickets/common';
 import { OrderCancelledListener } from './events/listeners/order-cancelled-listener';
 
 const start = async () => {
-    // check env variable is defined
+    // check env variable is defined before start
     if (!process.env.JWT_KEY) {
         throw new Error('JWT_KEY must be defined');
     }
