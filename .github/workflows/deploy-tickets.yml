@@ -15,7 +15,7 @@ jobs:
       - name: Login to docker
         run:  docker login -u $DOCKER_USERNAME -p $DOCKER_PASS
         env:
-          DOCKER_USERNAME:  ${{ DOCKER_USERNAME }}
-          DOCKER_PASS:  ${{ DOCKER_PASS }}
+          DOCKER_USERNAME:  ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASS:  ${{ secrets.DOCKER_PASS }}
       - name: push to docker
         run:  docker push narimanr/tickets
